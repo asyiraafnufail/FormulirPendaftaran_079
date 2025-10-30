@@ -134,7 +134,23 @@ fun FormulirPendaftaran() {
                         )
                         Text(item)
                     }
+                }
 
-
-
+                // Alamat
+                Spacer(modifier = Modifier.height(8.dp))
+                Text("ALAMAT", fontWeight = FontWeight.Bold)
+                OutlinedTextField(
+                    value = alamat,
+                    onValueChange = {
+                        val it = null
+                        alamat = it
+                    },
+                    placeholder = (Text("Alamat lengkap") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp)
+                )
+            }
+        }
     }
+}
