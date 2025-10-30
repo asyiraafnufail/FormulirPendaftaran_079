@@ -14,8 +14,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -40,6 +42,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
 fun FormulirPendaftaran() {
     // variabel input
     var nama by remember { mutableStateOf("") }
@@ -80,7 +83,10 @@ fun FormulirPendaftaran() {
                 Text("NAMA LENGKAP", fontWeight = FontWeight.Bold)
                 OutlinedTextField(
                     value = nama,
-                    onValueChange = { nama = it },
+                    onValueChange = {
+                        val it = null
+                        nama = it
+                    },
                     placeholder = { Text("Isian nama lengkap") },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -99,5 +105,12 @@ fun FormulirPendaftaran() {
                             .padding(vertical = 2.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-        }
+                        RadioButton(
+                            selected = jenisKelamin == item,
+                            onClick = { jenisKelamin = item }
+                        )
+                        Text(item)
+                    }
+                }
+
     }
