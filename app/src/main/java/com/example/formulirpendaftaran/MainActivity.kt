@@ -90,7 +90,6 @@ fun FormulirPendaftaran() {
                 OutlinedTextField(
                     value = nama,
                     onValueChange = {
-                        val it = null
                         nama = it
                     },
                     placeholder = { Text("Isian nama lengkap") },
@@ -146,7 +145,6 @@ fun FormulirPendaftaran() {
                 OutlinedTextField(
                     value = alamat,
                     onValueChange = {
-                        val it = null
                         alamat = it
                     },
                     placeholder = {Text("Alamat lengkap") },
