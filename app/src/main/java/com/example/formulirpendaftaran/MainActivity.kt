@@ -58,6 +58,10 @@ fun FormulirPendaftaran() {
     var jenisKelamin by remember { mutableStateOf("") }
     var status by remember { mutableStateOf("") }
 
+    var hasilNama by remember { mutableStateOf("") }
+    var hasilJK by remember { mutableStateOf("") }
+    var hasilAlamat by remember { mutableStateOf("") }
+
     val genderList = listOf("Laki-laki", "Perempuan")
     val statusList = listOf("Janda", "Lajang", "Duda")
 
@@ -165,6 +169,13 @@ fun FormulirPendaftaran() {
                 ) {
                     Text("Submit", color = Color.White)
                 }
+
+                Column(modifier = Modifier.padding(horizontal = 10.dp, vertical = 20.dp),){
+                    Text(text = "Nama    : "+nama, color = Color.White)
+                    Text(text = "JK      : "+jenisKelamin, color = Color.White)
+                    Text(text = "Status  : "+status, color = Color.White)
+                    Text(text = "Alamat  : "+alamat, color = Color.White)
+                }
             }
         }
         ElevatedCard(
@@ -173,10 +184,10 @@ fun FormulirPendaftaran() {
             modifier = Modifier.height(100.dp).width(300.dp)
         ){
             Column(modifier = Modifier.padding(horizontal = 10.dp, vertical = 20.dp),){
-                Text(text = "Nama    : "+nama, color = Color.White)
-                Text(text = "JK      : "+jenisKelamin, color = Color.White)
-                Text(text = "Status  : "+status, color = Color.White)
-                Text(text = "Alamat  : "+alamat, color = Color.White)
+                Text(text = "Nama    : "+nama, color = Color.Black)
+                Text(text = "JK      : "+jenisKelamin, color = Color.Black)
+                Text(text = "Status  : "+status, color = Color.Black)
+                Text(text = "Alamat  : "+alamat, color = Color.Black)
             }
         }
     }
