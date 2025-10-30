@@ -172,7 +172,7 @@ fun FormulirPendaftaran() {
             colors = CardDefaults.cardColors(containerColor = Color.Black),
             modifier = Modifier.height(100.dp).width(300.dp)
         ){
-            Column(modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),){
+            Column(modifier = Modifier.padding(horizontal = 10.dp, vertical = 20.dp),){
                 Text(text = "Nama    : "+nama, color = Color.White)
                 Text(text = "JK      : "+jenisKelamin, color = Color.White)
                 Text(text = "Status  : "+status, color = Color.White)
