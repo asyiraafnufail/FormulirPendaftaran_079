@@ -188,7 +188,7 @@ fun FormulirPendaftaran() {
                     ) {
                         Column(
                             modifier = Modifier
-                                .padding(16.dp)
+                                .padding(18.dp)
                         ) {
                             Text("Nama: $hasilNama", color = Color.White)
                             Text("Jenis Kelamin: $hasilJK", color = Color.White)
