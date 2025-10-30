@@ -20,8 +20,10 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -145,11 +147,20 @@ fun FormulirPendaftaran() {
                         val it = null
                         alamat = it
                     },
-                    placeholder = (Text("Alamat lengkap") },
+                    placeholder = {Text("Alamat lengkap") },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 8.dp)
                 )
+
+                // Tombol Submit
+                Button(
+                    onClick = { },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF7E57C2))
+                ) {
             }
         }
     }
