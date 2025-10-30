@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.OutlinedTextField
@@ -161,6 +163,8 @@ fun FormulirPendaftaran() {
                         .padding(top = 16.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF7E57C2))
                 ) {
+                    Text("Submit", color = Color.White)
+                }
             }
         }
     }
