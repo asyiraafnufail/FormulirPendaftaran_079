@@ -11,12 +11,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Surface
@@ -163,6 +165,18 @@ fun FormulirPendaftaran() {
                 ) {
                     Text("Submit", color = Color.White)
                 }
+            }
+        }
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.Black),
+            modifier = Modifier.height(100.dp).width(300.dp)
+        ){
+            Column(modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),){
+                Text(text = "Nama    : "+nama, color = Color.White)
+                Text(text = "JK      : "+jenisKelamin, color = Color.White)
+                Text(text = "Status  : "+status, color = Color.White)
+                Text(text = "Alamat  : "+alamat, color = Color.White)
             }
         }
     }
