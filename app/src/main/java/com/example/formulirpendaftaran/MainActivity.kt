@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -61,6 +60,7 @@ fun FormulirPendaftaran() {
     var hasilNama by remember { mutableStateOf("") }
     var hasilJK by remember { mutableStateOf("") }
     var hasilAlamat by remember { mutableStateOf("") }
+    var hasilStatus by remember { mutableStateOf("") }
 
     val genderList = listOf("Laki-laki", "Perempuan")
     val statusList = listOf("Janda", "Lajang", "Duda")
@@ -161,7 +161,12 @@ fun FormulirPendaftaran() {
 
                 // Tombol Submit
                 Button(
-                    onClick = { },
+                    onClick = {
+                        hasilNama = nama
+                        hasilJK = jenisKelamin
+                        hasilStatus = status
+                        hasilAlamat = alamat
+                    },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 16.dp),
@@ -170,24 +175,29 @@ fun FormulirPendaftaran() {
                     Text("Submit", color = Color.White)
                 }
 
-                Column(modifier = Modifier.padding(horizontal = 10.dp, vertical = 20.dp),){
-                    Text(text = "Nama    : "+nama, color = Color.White)
-                    Text(text = "JK      : "+jenisKelamin, color = Color.White)
-                    Text(text = "Status  : "+status, color = Color.White)
-                    Text(text = "Alamat  : "+alamat, color = Color.White)
+                // Card hasil input
+                if (hasilNama.isNotEmpty() || hasilAlamat.isNotEmpty()) {
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    ElevatedCard(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 8.dp),
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFF7E57C2)),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .padding(16.dp)
+                        ) {
+                            Text("Nama: $hasilNama", color = Color.White)
+                            Text("Jenis Kelamin: $hasilJK", color = Color.White)
+                            Text("Status: $hasilStatus", color = Color.White)
+                            Text("Alamat: $hasilAlamat", color = Color.White)
+                        }
+                    }
                 }
-            }
-        }
-        ElevatedCard(
-            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-            colors = CardDefaults.cardColors(containerColor = Color.Black),
-            modifier = Modifier.height(100.dp).width(300.dp)
-        ){
-            Column(modifier = Modifier.padding(horizontal = 10.dp, vertical = 20.dp),){
-                Text(text = "Nama    : "+nama, color = Color.Black)
-                Text(text = "JK      : "+jenisKelamin, color = Color.Black)
-                Text(text = "Status  : "+status, color = Color.Black)
-                Text(text = "Alamat  : "+alamat, color = Color.Black)
+
             }
         }
     }
